@@ -14,7 +14,6 @@ Source: 	http://www.lag.net/~robey/paramiko/download/%{module_name}-%{version}.t
 Requires:   pycrypto
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
-Buildroot: 	%_tmppath/%name-%version-buildroot
 BuildRequires:	python-devel
 BuildRequires:	pycrypto
 BuildArch:	noarch
