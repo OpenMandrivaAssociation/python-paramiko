@@ -1,5 +1,5 @@
 %define module_name 	paramiko
-%define version 1.6.4
+%define version 1.7.2
 %define rel 1
 
 Summary: 	SSH2 protocol for Python
@@ -9,15 +9,15 @@ Release: 	%mkrel %rel
 Url: 		http://www.lag.net/~robey/paramiko/
 License: 	GPL
 Group: 		Development/Python
-Source: 	http://www.lag.net/~robey/paramiko/download/%{module_name}-%{version}.tar.bz2
+Source: 	http://www.lag.net/~robey/paramiko/download/%{module_name}-%{version}.tar.gz
 
 Requires:   pycrypto
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
-Buildroot: 	%_tmppath/%name-%version-buildroot
 BuildRequires:	python-devel
 BuildRequires:	pycrypto
 BuildArch:	noarch
+Buildroot: 	%_tmppath/%name-%version
 
 %description
 Paramiko is a module for python that implements the SSH2 protocol for secure
@@ -31,14 +31,14 @@ or hashing you prefer (if you care), but all of the heavy lifting is done by
 the paramiko module.
 
 %prep
-%setup -q -n %module_name-%version.orig
+%setup -q -n %module_name-%version
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
+rm -rf %{buildroot}
+python setup.py install --root=%{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 #%check
 #python test.py
