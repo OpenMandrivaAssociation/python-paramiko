@@ -1,15 +1,15 @@
 %define module_name 	paramiko
-%define version 1.7.2
+%define version 1.7.4
 %define rel 1
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
 Version: 	%version
 Release: 	%mkrel %rel
-Url: 		http://www.lag.net/~robey/paramiko/
-License: 	GPL
+Url: 		http://www.lag.net//paramiko/
+License: 	LGPL 2+
 Group: 		Development/Python
-Source: 	http://www.lag.net/~robey/paramiko/download/%{module_name}-%{version}.tar.gz
+Source: 	http://www.lag.net/paramiko/download/%{module_name}-%{version}.tar.gz
 
 Requires:   pycrypto
 Obsoletes:  %{module_name}
