@@ -1,6 +1,6 @@
 %define module_name 	paramiko
 %define version 1.7.6
-%define rel 1
+%define rel 2
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
