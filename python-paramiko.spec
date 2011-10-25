@@ -1,11 +1,10 @@
 %define module_name 	paramiko
-%define version 1.7.6
-%define rel 2
+%define version 1.7.7.1
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
 Version: 	%version
-Release: 	%mkrel %rel
+Release: 	3
 Url: 		http://www.lag.net//paramiko/
 License: 	LGPL 2+
 Group: 		Development/Python
