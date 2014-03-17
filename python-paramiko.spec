@@ -2,7 +2,7 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version: 	1.12.1
+Version: 	1.12.2
 Release: 	1
 Url: 		http://www.lag.net//paramiko/
 License: 	LGPL 2+
@@ -96,6 +96,7 @@ python setup.py install --root=%{buildroot}
 - rebuild for python 2.5
 - use %%rel scheme for mkrel
 - Import python-paramiko
+
 
 
 
