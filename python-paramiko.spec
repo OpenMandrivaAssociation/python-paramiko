@@ -4,19 +4,20 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version: 	1.14.0
-Release: 	5
+Version: 	2.0.2
+Release: 	1
 Url: 		http://www.lag.net//paramiko/
 License: 	LGPL 2+
 Group: 		Development/Python
 Source0: 	http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
 
-Requires:   pycrypto
+Requires:   python-cryptography
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
 BuildRequires:	python2-devel
 BuildRequires:	python3-devel
-BuildRequires:	pycrypto
+BuildRequires:	python-cryptography
+BuildRequires:	python2-cryptography
 BuildArch:	noarch
 
 %description
@@ -33,6 +34,7 @@ the paramiko module.
 %package -n python2-%module_name
 Summary:	Version of the Paramiko SSH2 module for Python 2.x
 Group:		Development/Python
+Requires:	python2-cryptography
 
 %description -n python2-%module_name
 Paramiko is a module for python that implements the SSH2 protocol for secure
@@ -60,11 +62,11 @@ cd ../python3
 python3 setup.py install --root=%{buildroot}
 
 %files
-%doc python3/docs python3/PKG-INFO python3/README python3/tests python3/demo*
+%doc python3/README.rst python3/tests python3/demo*
 %{py3_puresitedir}/*.egg-info
 %{py3_puresitedir}/%module_name
 
 %files -n python2-%module_name
-%doc python2/docs python2/PKG-INFO python2/README python2/tests python2/demo*
+%doc python2/README.rst python2/tests python2/demo*
 %{py2_puresitedir}/*.egg-info
 %{py2_puresitedir}/%module_name
