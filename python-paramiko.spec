@@ -15,7 +15,9 @@ Requires:   python-cryptography
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
 BuildRequires:	python2-devel
+BuildRequires:	python2-setuptools
 BuildRequires:	python3-devel
+BuildRequires:	python-setuptools
 BuildRequires:	python-cryptography
 BuildRequires:	python2-cryptography
 BuildArch:	noarch
