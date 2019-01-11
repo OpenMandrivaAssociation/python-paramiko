@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   paramiko-2.4.1.tar.gz: 2b35a8016e45ae96f949ba7a8c2d67fa41aa673e
+sources:
+  paramiko-2.4.2.tar.gz: 7ab1e9aaf0b6eedb2098661d283f4d6f6d9c8963

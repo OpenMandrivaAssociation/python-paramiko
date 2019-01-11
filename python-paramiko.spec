@@ -4,12 +4,12 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version: 	2.4.1
-Release: 	2
+Version: 	2.4.2
+Release: 	1
 Url: 		http://www.lag.net//paramiko/
 License: 	LGPL 2+
 Group: 		Development/Python
-Source0: 	http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
+Source0: 	https://pypi.io/packages/source/p/paramiko/paramiko-%{version}.tar.gz
 
 Requires:   python-cryptography
 Obsoletes:  %{module_name}
@@ -50,7 +50,7 @@ or hashing you prefer (if you care), but all of the heavy lifting is done by
 the paramiko module.
 
 %prep
-%setup -q -n %module_name-%version
+%setup -q -n %module_name-%{version}
 
 mkdir python2
 mv `ls |grep -v python2` python2
@@ -61,7 +61,7 @@ cd python2
 python2 setup.py install --root=%{buildroot}
 
 cd ../python3
-python3 setup.py install --root=%{buildroot}
+%py3_install
 
 %files
 %doc python3/README.rst python3/tests python3/demo*
