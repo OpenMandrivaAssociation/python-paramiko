@@ -4,12 +4,12 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version:	2.6.0
-Release: 	3
+Version:	2.7.1
+Release: 	1
 Url: 		http://www.lag.net//paramiko/
 License: 	LGPL 2+
 Group: 		Development/Python
-Source0:	https://files.pythonhosted.org/packages/54/68/dde7919279d4ecdd1607a7eb425a2874ccd49a73a5a71f8aa4f0102d3eb8/paramiko-2.6.0.tar.gz
+Source0:	https://files.pythonhosted.org/packages/ac/15/4351003352e11300b9f44a13576bff52dcdc6e4a911129c07447bda0a358/paramiko-%{version}.tar.gz
 
 Requires:   python-cryptography
 Obsoletes:  %{module_name}
