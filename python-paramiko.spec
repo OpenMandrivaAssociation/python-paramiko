@@ -4,22 +4,19 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version:	2.7.1
+Version:	2.7.2
 Release: 	1
-Url: 		http://www.lag.net//paramiko/
+Url: 		http://www.lag.net/paramiko/
 License: 	LGPL 2+
 Group: 		Development/Python
-Source0:	https://files.pythonhosted.org/packages/ac/15/4351003352e11300b9f44a13576bff52dcdc6e4a911129c07447bda0a358/paramiko-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
 
 Requires:   python-cryptography
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
-BuildRequires:	python2-devel
-BuildRequires:	python2-setuptools
-BuildRequires:	python3-devel
+BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	python-cryptography
-BuildRequires:	python2-cryptography
 BuildArch:	noarch
 
 %description
@@ -52,23 +49,10 @@ the paramiko module.
 %prep
 %setup -q -n %module_name-%version
 
-mkdir python2
-mv `ls |grep -v python2` python2
-cp -a python2 python3
-
 %install
-cd python2
-python2 setup.py install --root=%{buildroot}
-
-cd ../python3
-python3 setup.py install --root=%{buildroot}
+python setup.py install --root=%{buildroot}
 
 %files
-%doc python3/README.rst python3/tests python3/demo*
+%doc README.rst tests demo*
 %{py3_puresitedir}/*.egg-info
 %{py3_puresitedir}/%module_name
-
-%files -n python2-%module_name
-%doc python2/README.rst python2/tests python2/demo*
-%{py2_puresitedir}/*.egg-info
-%{py2_puresitedir}/%module_name
