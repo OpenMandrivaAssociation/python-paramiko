@@ -2,8 +2,8 @@
 
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
-Version:	3.5.1
-Release:	2
+Version:	4.0.0
+Release:	1
 Url: 		https://www.paramiko.org
 License: 	LGPL 2+
 Group: 		Development/Python
@@ -13,8 +13,8 @@ Requires:   python-cryptography
 Obsoletes:  %{module_name}
 Provides:   %{module_name}
 BuildRequires:	python-devel
-BuildRequires:	python-setuptools
-BuildRequires:	python-cryptography
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(python-cryptography)
 BuildArch:	noarch
 
 %description
