@@ -3,7 +3,7 @@
 Summary: 	SSH2 protocol for Python
 Name: 		python-%module_name
 Version:	4.0.0
-Release:	1
+Release:	2
 Url: 		https://www.paramiko.org
 License: 	LGPL 2+
 Group: 		Development/Python
