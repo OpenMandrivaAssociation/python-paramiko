@@ -9,12 +9,13 @@ License: 	LGPL 2+
 Group: 		Development/Python
 Source0:        https://github.com/paramiko/paramiko/archive/%{version}/%{module_name}-%{version}.tar.gz
 
-Requires:   python-cryptography
-Obsoletes:  %{module_name}
-Provides:   %{module_name}
+Requires:   python%{pyver}dist(cryptography)
+Obsoletes:  %{module_name} < %{EVRD}
+Provides:   %{module_name} = %{EVRD}
+BuildSystem:	python
 BuildRequires:	python-devel
 BuildRequires:	python%{pyver}dist(setuptools)
-BuildRequires:	python%{pyver}dist(python-cryptography)
+BuildRequires:	python%{pyver}dist(cryptography)
 BuildArch:	noarch
 
 %description
@@ -28,13 +29,7 @@ one you expected to see, and you have control over which kinds of encryption
 or hashing you prefer (if you care), but all of the heavy lifting is done by
 the paramiko module.
 
-%prep
-%setup -q -n %module_name-%version
-
-%install
-python setup.py install --root=%{buildroot}
-
 %files
 %doc README.rst tests demo*
-%{py3_puresitedir}/*.egg-info
+%{py3_puresitedir}/%module_name-%{version}.dist-info
 %{py3_puresitedir}/%module_name
