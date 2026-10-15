@@ -13,7 +13,9 @@ Requires:   python%{pyver}dist(cryptography)
 Obsoletes:  %{module_name} < %{EVRD}
 Provides:   %{module_name} = %{EVRD}
 BuildSystem:	python
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(cryptography)
 BuildArch:	noarch
@@ -30,6 +32,7 @@ or hashing you prefer (if you care), but all of the heavy lifting is done by
 the paramiko module.
 
 %files
-%doc README.rst tests demo*
-%{py3_puresitedir}/%module_name-%{version}.dist-info
-%{py3_puresitedir}/%module_name
+%doc README.rst
+%license LICENSE
+%{python_sitelib}/%module_name-%{version}.dist-info
+%{python_sitelib}/%module_name
